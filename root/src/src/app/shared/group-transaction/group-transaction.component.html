@@ -1,0 +1,52 @@
+<ion-list>
+    <ion-item class="divider"*ngFor="let key of testgroup | async">
+        <ion-grid style="height: 100%; width: 100%">
+            <ion-row justify-content-center align-items-center style="height: 100%;">
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="{{key.createdbyphoto}}">
+                    </ion-avatar>
+                    <h4>{{key.createdbyname}} charged for {{key.description}}</h4>
+                    <div class="negMoney" slot="end">
+                        -${{key.amount}}
+                    </div>
+                </ion-item>
+                <ion-list *ngFor="let mem of key.members">
+                    <ion-item>
+                        <ion-avatar slot="start">
+                            <img src="{{mem.photoURL}}">
+                        </ion-avatar>
+                        <h5>{{mem.name}} owes </h5>
+                        <div class="negMoney" slot="end">-${{decTrans(mem.owes)}}</div>
+                    </ion-item>
+                </ion-list>
+
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+</ion-list>
+
+<!-- <ion-item  *ngFor="let key of testgroup | async">
+  <ion-card>
+         
+          
+  <ion-card-content>
+      
+     <ion-avatar slot="start">
+         <img src="{{key.createdbyphoto}}">
+     </ion-avatar>
+     <br />
+  <span class="recents_highlights" slot="start">{{key.createdbyname}}</span> created a bill called <span class="recents_highlights">{{key.description}}</span> with an amount of <span class="recents_highlights">${{key.amount}}</span>
+  charging:
+  <br />
+  <ion-list *ngFor="let mem of key.members">
+      <ion-avatar slot="start">
+          <img src="{{mem.photoURL}}">
+      </ion-avatar>
+      <br />
+      <span class="recents_highlights" slot="start">{{mem.name}}</span>
+      who owes  <span class="recents_highlights"> ${{mem.owes}}</span>
+  </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-item> -->

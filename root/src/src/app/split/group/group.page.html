@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar  color="primary">
+      <ion-item class="menTitle" >
+        <ion-back-button ></ion-back-button>
+        <ion-title>Split | Create New Group Bill</ion-title>
+      </ion-item>
+      
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding *ngIf="docData$ | async as val">
+  
+        <ion-label>Bill Detail/Name</ion-label>
+        <ion-input type="text" [(ngModel)]="description" placeholder="Enter a description"></ion-input>
+
+        <ion-label>Type</ion-label>
+        <ion-input type="text" [(ngModel)]="billtype" placeholder="Ex: Entertainment"></ion-input>
+        <ion-label>Amount</ion-label>
+        <ion-label color = "danger"  *ngIf="!isenabled">Please enter an amount</ion-label>
+        <ion-item>
+        <ion-label>$</ion-label>
+        <ion-input type="number" [(ngModel)]="amount" placeholder="5.43" (input) = "checkInput(amount)"></ion-input>
+        </ion-item>
+  
+   
+     <!-- <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>  -->
+     <ion-label>Add Members</ion-label>
+     <ion-list >
+    <ion-item class="divider" *ngFor="let key of val.members;">
+        <ion-grid style="height: 100%; width: 100%;" >
+      <ion-row justify-content-center align-items-center style="height: 100%;">
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="{{key.photoURL}}">
+                    </ion-avatar>
+                    <h4>{{key.name}}</h4>
+                    <ion-checkbox slot="end" (click)="presentAddFriend(key, key.uid)"></ion-checkbox>
+                </ion-item>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+</ion-list>
+
+   <!-- <ion-list no-lines>
+    <ion-list>
+      <ion-item *ngFor="let key of myFriends | async;">
+        <ion-item >
+          <ion-avatar slot="start" item-left>
+            <img src="{{key.photoURL}}">
+          </ion-avatar>
+          <h2>{{key.displayName}}</h2>
+        </ion-item>
+        <ion-item slot="end">
+          <ion-checkbox (click)="presentAddFriend(key, key.uid)"></ion-checkbox>
+        </ion-item>
+        
+      </ion-item>
+    </ion-list>
+  </ion-list> -->
+
+        <ion-label>Split  <ion-button (click)="presentBillForm()" [disabled]="!isenabled" color ="medium" >{{splitType}} </ion-button></ion-label>
+       
+
+            <!-- <ion-select-option value="you">equally</ion-select-option>
+          <ion-select-option value="Multiple">unequally</ion-select-option>
+          <ion-select-option value="Multiple">by percentages</ion-select-option>
+          <ion-select-option value="Multiple">by shares</ion-select-option>
+          <ion-select-option value="Multiple">by adjustment</ion-select-option> -->
+
+
+
+
+  <ion-button color="primary" (click)="createBill(this.description, this.billtype, this.amount, val.amount, val)">Submit</ion-button>
+  <ion-button color="danger" (click)="pushPage()">Cancel</ion-button> 
+
+  
+  </ion-content>

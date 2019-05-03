@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-buttons slot="start">
+          <ion-menu-button class="menuButton" autoHide></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Split | Add Friends</ion-title>
+
+      <ion-buttons slot="end">
+          <ion-button icon-only href="/myfriends">
+            <ion-icon name="person"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>
+<ion-list no-lines>
+  <ion-list>
+    <ion-item *ngFor="let key of testUsers | async; let filt of filtered | async;">
+      <ion-item >
+        <ion-avatar slot="start" item-left>
+          <img src="{{key.photoURL}}">
+        </ion-avatar>
+        <h2>{{key.displayName}}</h2>
+      </ion-item>
+      <ion-item slot="end">
+        <ion-button color="primary" (click)="presentAddFriend(key)">
+          <ion-icon name="person-add"></ion-icon>
+        </ion-button>
+      </ion-item>
+      
+    </ion-item>
+  </ion-list>
+</ion-list>
+</ion-content>
+<!-- <ion-content padding>
+      
+<ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>
+<ion-list no-lines>
+  <ion-list>
+    <ion-item-sliding *ngFor="let key of filteredusers">
+      <ion-item> 
+        <ion-avatar item-left>
+          <img src="assets/icon/anon.svg">
+        </ion-avatar>
+        <h2>{{ key.displayName }}</h2>
+      </ion-item>
+      <ion-item-options slide="left">
+        <button ion-button color="primary" (click)="createGroup()">
+          <ion-icon name="add"></ion-icon>
+          Create Group
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-list>
+</ion-content> -->

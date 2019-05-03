@@ -1,0 +1,27 @@
+
+<ion-list >
+  <ion-item  *ngFor="let key of testgroup | async">
+      <ion-card>
+             
+              
+      <ion-card-content>
+          
+         <ion-avatar slot="start">
+             <img src="{{key.createdbyphoto}}">
+         </ion-avatar>
+         <br />
+      <span class="recents_highlights" slot="start">{{key.createdbyname}}</span> created a bill called <span class="recents_highlights">{{key.description}}</span> with an amount of <span class="recents_highlights">${{key.amount}}</span>
+      charging:
+      <br />
+      <ion-list *ngFor="let mem of key.members">
+          <ion-avatar slot="start">
+              <img src="{{mem.photoURL}}">
+          </ion-avatar>
+          <br />
+          <span class="recents_highlights" slot="start">{{mem.name}}</span>
+          who owes  <span class="recents_highlights"> ${{mem.owes}}</span>
+      </ion-list>
+      </ion-card-content>
+  </ion-card>
+  </ion-item>
+  </ion-list>

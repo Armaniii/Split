@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="end">
+            <ion-menu-button class="menuButton" autoHide></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title text-center>Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+    <ng-container *ngIf="get_user() | async as user">
+        <ion-grid style="height: 100%">
+            <ion-row justify-content-center align-items-center style="height: 100%">
+                <ion-card padding color="primary"> 
+                    <ion-card-title>User Info</ion-card-title>
+                    <!-- <ion-row>
+                        <ion-col col-4></ion-col> -->
+                        <img id="userAvatar" [src]="user.photoURL  || 'assets/icon/anon.svg'" (click)="presentAlert()">
+                        <!-- <ion-col col-4></ion-col>
+                    </ion-row> -->
+                    <div text-center>
+                    <ion-item color="primary">
+                        <ion-title text-center (click)="presentAlertChangeName()">{{user.displayName}}
+                            <ion-icon name="create"></ion-icon>
+                        </ion-title>
+                        
+                    </ion-item>
+                    
+                    <!-- <ion-button (click)="presentAlertChangeName()"><ion-icon slot="start" name="create"></ion-icon>{{user.displayName}}</ion-button>
+                    <br /> -->
+                    <!-- <ion-button (click)="presentAlert()"><ion-icon slot="start" name="photos"></ion-icon>Change Profile Picture</ion-button>
+                    <br /> -->
+                    <ion-button color="tertiary" (click)="reset_password(user.email)"><ion-icon slot="start" name="mail"></ion-icon>Reset password</ion-button>
+                    <br />
+                    <ion-button color="danger" (click)="presentAlertConfirm()"><ion-icon slot="start" name="close"></ion-icon>Delete account</ion-button>
+                    </div>
+                </ion-card>
+
+                <ion-card color="primary" *ngIf="docData$ | async as key">
+                    <ion-card-title style="padding: 0; padding-top: 20px; padding-left: 20px;">Alerts</ion-card-title>
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-item color="primary" (click)="getPermission()">
+                                <ion-icon slot="start" name="notifications"></ion-icon>
+                                <h2 slot="start">Push Notifications</h2>
+                                <ion-toggle color="primary" slot="end" [checked]="key.status === 'true'" (ionChange)="pushNotifications(key.status)" ></ion-toggle>
+                            </ion-item>
+                            <div text-center>
+                            <ion-item text-center color="primary">
+                                <ion-button color="tertiary" (click)="randomDiscount()">
+                                    <ion-icon slot="start" name="megaphone"></ion-icon>
+                                    Broadcast Notification
+                                </ion-button>
+                            </ion-item>
+                            </div>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+        </ion-grid>
+    </ng-container>
+</ion-content>

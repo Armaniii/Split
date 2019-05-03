@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-back-button class="menuButton"></ion-back-button>
+      <ion-title>Split | Create New Group</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+      <ion-label>Group Details</ion-label>
+      <ion-textarea type="text" [(ngModel)]="name" placeholder="Group Name"></ion-textarea>
+
+      <ion-label>Type</ion-label>
+      <ion-list>
+          <ion-radio-group [(ngModel)]="type">
+
+              <ion-item>
+                  <ion-label>Apartment</ion-label>
+                  <ion-radio slot="start" value="apartment" checked></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>House</ion-label>
+                  <ion-radio slot="start" value="house"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Tip</ion-label>
+                <ion-radio slot="start" value="tip"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Other</ion-label>
+              <ion-radio slot="start" value="other"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar> 
+ <ion-list no-lines>
+  <ion-list>
+    <ion-item *ngFor="let key of testUsers | async;">
+      <ion-item >
+        <ion-avatar slot="start" item-left>
+          <img src="{{key.photoURL}}">
+        </ion-avatar>
+        <h2>{{key.displayName}}</h2>
+      </ion-item>
+      <ion-item slot="end">
+        <ion-button  (click)="presentAddFriend(key)">
+          <ion-icon name="person-add"></ion-icon>
+        </ion-button>
+         <!-- <ion-button color="primary" (click)="presentAddFriend(key, key.uid)">
+          <ion-icon name ="person-add" value="added"></ion-icon>
+        </ion-button>  -->
+      </ion-item>
+      
+    </ion-item>
+  </ion-list>
+</ion-list>
+<ion-button color="primary" (click)="createGroup(this.name, this.type)">Submit</ion-button>
+<ion-button color="danger" (click)="pushPage()">Cancel</ion-button> 
+
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="end" class="menuButton">
+            <ion-menu-button autoHide></ion-menu-button>
+        </ion-buttons>
+  
+        <ion-title class="newTitle">All My Bills</ion-title>
+  
+    </ion-toolbar>
+  
+  </ion-header>
+  <ion-content>
+    <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>
+
+  <ion-list no-lines>
+    <ion-list>
+      <ion-item *ngFor="let key of testgroup | async;">
+        <ion-item >
+          <!-- <ion-avatar slot="start" item-left>
+            <img src="{{key.photoURL}}">
+          </ion-avatar> -->
+          <h2>{{key.description}}</h2>
+        </ion-item>
+          <ion-button slot="end" (click)="presentSplitInfo(key)">
+            <ion-icon  name="eye" ></ion-icon>
+          </ion-button>
+        <ion-button slot="end" color="success" (click)="presentSplitForm(key)">
+          <ion-icon  name="document" ></ion-icon>
+        </ion-button>
+        <ion-button slot="end" color="danger" (click)="delete(key.id)">
+            <ion-icon  name="trash" ></ion-icon>
+          </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+
+  </ion-content>
+ 

@@ -1,0 +1,86 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-android-firebase-gradle-release": {
+      "FIREBASE_VERSION": "12.+",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-android-play-services-gradle-release": {
+      "PLAY_SERVICES_VERSION": "12.+",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-crop": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "ionfire.page.link",
+      "ANDROID_SCHEME": " ",
+      "ANDROID_HOST": " ",
+      "ANDROID_PATHPREFIX": "/",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-googleplus": {
+      "PLAY_SERVICES_VERSION": "11.8.0",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-telerik-imagepicker": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-spinner": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-native-spinner": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>938783939410-ni9l6cglbrc8stus86b59n1f4iflreh3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.938783939410-ni9l6cglbrc8stus86b59n1f4iflreh3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAn9bA6XpN4KV1oJOZdS6ZO3NbXSs2AdBc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>938783939410</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.SplitSplat.Split</string>
+	<key>PROJECT_ID</key>
+	<string>splitwise-218523</string>
+	<key>STORAGE_BUCKET</key>
+	<string>splitwise-218523.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:938783939410:ios:d8bb7e539ffd5ff7</string>
+	<key>DATABASE_URL</key>
+	<string>https://splitwise-218523.firebaseio.com</string>
+</dict>
+</plist>

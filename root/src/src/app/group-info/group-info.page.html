@@ -1,0 +1,111 @@
+<ion-header *ngIf="docData$ | async as groupProfile">
+    <ion-toolbar color="primary">
+        <!-- <ion-button class="leftButton" slot="start" color="primary" (click)="gotoGroups()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </ion-button> -->
+        
+        <!-- <div class="split-img">
+            <img src="./assets/icon/split_HEADER_WHITE.png">
+        </div> -->
+        <ion-title class="newTitle">{{groupProfile.displayName}}</ion-title>
+        <ion-buttons>
+                <ion-back-button slot="start"></ion-back-button>
+            <ion-menu-button slot="end" class="menuButton" autoHide></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-toolbar color="primary">
+        <div text-center>
+            <img id="circle-img" src="{{groupProfile.photoURL}}">
+        </div>
+        <h2 text-center>Balance ${{groupProfile.amount}}</h2>
+        <h4 text-center>{{groupProfile.members.length}} Members | Type: {{groupProfile.type}}</h4>
+    </ion-toolbar>
+
+    <ion-toolbar color="primary">
+        <ion-segment [(ngModel)]="tab" color="secondary">
+        <ion-segment-button value="balance">
+            <ion-icon name="logo-usd"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="transactions">
+            <ion-icon name="card"></ion-icon>
+        </ion-segment-button>
+        </ion-segment>   
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="tab">
+      <div *ngSwitchCase="'balance'">
+          <!-- <app-bill-activity></app-bill-activity> -->
+          <app-group-balance></app-group-balance>
+      </div>
+      <div *ngSwitchCase="'transactions'">
+          <!-- <app-groups></app-groups> -->
+          <app-group-transaction></app-group-transaction>
+      </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="gotoBillForm()">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    
+<!-- <ion-list *ngIf="segBool == false" >
+  <ion-item  *ngFor="let key of testgroup | async">
+      <ion-card>
+             
+              
+      <ion-card-content>
+          
+         <ion-avatar slot="start">
+             <img src="{{key.createdbyphoto}}">
+         </ion-avatar>
+         <br />
+      <span class="recents_highlights" slot="start">{{key.createdbyname}}</span> created a bill called <span class="recents_highlights">{{key.description}}</span> with an amount of <span class="recents_highlights">${{key.amount}}</span>
+      charging:
+      <br />
+      <ion-list *ngFor="let mem of key.members">
+          <ion-avatar slot="start">
+              <img src="{{mem.photoURL}}">
+          </ion-avatar>
+          <br />
+          <span class="recents_highlights" slot="start">{{mem.name}}</span>
+          who owes  <span class="recents_highlights"> ${{mem.owes}}</span>
+      </ion-list>
+      </ion-card-content>
+  </ion-card>
+  </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="segBool == true" >
+    <ion-item  *ngFor="let key of testgroup | async">
+        <ion-card>
+               
+                
+        <ion-card-content>
+            
+           <ion-avatar slot="start">
+               <img src="{{key.createdbyphoto}}">
+           </ion-avatar>
+           <br />
+        <span class="recents_highlights" slot="start">{{key.createdbyname}}</span> created a bill called <span class="recents_highlights">{{key.description}}</span> with an amount of <span class="recents_highlights">${{key.amount}}</span>
+        charging:
+        <br />
+        <ion-list *ngFor="let mem of key.members">
+            <ion-avatar slot="start">
+                <img src="{{mem.photoURL}}">
+            </ion-avatar>
+            <br />
+            <span class="recents_highlights" slot="start">{{mem.name}}</span>
+            who owes  <span class="recents_highlights"> ${{mem.owes}}</span>
+        </ion-list>
+        </ion-card-content>
+    </ion-card>
+    </ion-item>
+    </ion-list>
+ -->
+
+</ion-content>
+
+  

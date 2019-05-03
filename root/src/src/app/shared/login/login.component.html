@@ -1,0 +1,37 @@
+<ng-container *ngIf="auth.user$ | async as user; else login">
+    <app-profile [user]="user" *ngIf="auth.user$ | async as user;"></app-profile>
+</ng-container>
+
+<ng-template #login >
+        
+    <ion-item *ngIf="!reg_bool">
+      <ion-label>Full Name:</ion-label>
+      <ion-input type="text" id="name" [(ngModel)]="name" placeholder="John Smith" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label >E-mail:</ion-label>
+        <ion-input type="email" id="email" [(ngModel)]="email" placeholder="johnsmith@email.com"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label >Password:</ion-label>
+        <ion-input type="password" id="password" [(ngModel)]="password" placeholder="Enter Password Here"></ion-input>
+    </ion-item> 
+    
+    <ion-button color="dark" (click)="resetPasswordPrompt()" *ngIf="reg_bool"><ion-icon slot="start" name="mail"></ion-icon>Forgot Password</ion-button>
+    <br />
+    <ion-button color="success" (click)="signIn(this.email, this.password)" *ngIf="reg_bool" ><ion-icon slot="start" name="log-in"></ion-icon>Login</ion-button>
+    <ion-button color="success" (click)="reg_bool = !reg_bool" *ngIf="!reg_bool" ><ion-icon slot="start" name="arrow-back"></ion-icon>Go Back To Login</ion-button>
+    <ion-button color="dark" (click)="reg_bool = !reg_bool" *ngIf="reg_bool"><ion-icon slot="start" name="build"></ion-icon>Make an account</ion-button>
+    <ion-button color="dark" (click)="signUp(this.email, this.password, this.name)" *ngIf="!reg_bool"><ion-icon slot="start" name="checkmark"></ion-icon>Sign Up</ion-button>
+        
+    <br />
+    <ion-button color="primary" (click)="auth.googleLogin()" *ngIf="reg_bool">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Login with Google
+    </ion-button>
+
+    <!-- <ion-button color="medium" (click)="auth.anonymousLogin()">
+        <ion-icon slot="start" name="glasses"></ion-icon>
+        Login as Guest
+    </ion-button> -->
+</ng-template>

@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <ion-title class="menTitle">Viewing Task</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content  padding>
+    <ion-card color="primary"  *ngIf="todo$ | async as todo">
+        <ion-card-header>
+            <ion-card-subtitle>Task Todo</ion-card-subtitle>
+            <ion-card-title>{{this.content}}</ion-card-title>
+        </ion-card-header>
+        
+    </ion-card>
+
+</ion-content>

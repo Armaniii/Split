@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <div padding class="split-img">
+            <img src="./assets/icon/split_HEADER_WHITE.png">
+        </div>
+    
+        <ion-buttons slot="end" *ngIf="get_auth().user$ | async as user">
+            <ion-menu-button class="menuButton" autoHide></ion-menu-button>
+        </ion-buttons>
+    
+    </ion-toolbar>
+
+    <ion-toolbar color="primary" *ngIf="get_auth().user$ | async as user">
+        <ion-segment [(ngModel)]="event" color="secondary">
+            <ion-segment-button value="groups">
+                <ion-icon name="wallet"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="activity">
+                <ion-icon name="pulse"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="friends">
+                <ion-icon name="people"></ion-icon>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <app-login></app-login>
+
+    <div [ngSwitch]="event">
+        <div *ngSwitchCase="'activity'">
+            <app-bill-activity *ngIf="get_auth().user$ | async as user"></app-bill-activity>
+        </div>
+        <div *ngSwitchCase="'groups'">
+            <app-groups *ngIf="get_auth().user$ | async as user"></app-groups>
+        </div>
+        <div *ngSwitchCase="'friends'">
+            <app-myfriends *ngIf="get_auth().user$ | async as user"></app-myfriends>
+        </div>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="get_auth().user$ | async as user">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="start">
+            <ion-fab-button (click)="gotoAddFriend()"><ion-icon name="person-add" ></ion-icon></ion-fab-button>
+            <ion-fab-button (click)="presentGroupForm()"><ion-icon name="contacts" ></ion-icon></ion-fab-button>
+          </ion-fab-list>
+          <ion-fab-list side="top">
+            <ion-fab-button (click)="gotoBillForm()"><ion-icon name="today" ></ion-icon></ion-fab-button>
+          </ion-fab-list>
+      </ion-fab>
+
+</ion-content>

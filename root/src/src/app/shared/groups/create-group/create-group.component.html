@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <!-- <ion-back-button class="menuButton"></ion-back-button> -->
+        <ion-title text-center>Group Creation</ion-title>
+        <ion-button class="leftButton" slot="start"color="primary" (click)="pushPage()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+
+    <ion-toolbar color="primary">
+      <div text-center>
+        <img id="circle-img" src="assets/icon/anon.svg">
+      </div>
+      <ion-input text-center type="text" [(ngModel)]="name" placeholder="Insert Group Name"></ion-input>
+      <ion-item color="primary">
+        <ion-label>Type</ion-label>
+        <ion-select [(ngModel)]="type">
+          <ion-select-option *ngFor="let t of typeData" [value] = "t" >{{t.text}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar> 
+  
+  <ion-list>
+    <ion-item class="divider"*ngFor="let key of testUsers | async">
+        <ion-grid style="width: 100%; height: 100%;">
+            <ion-row justify-content-center align-items-center style="height: 100%;">
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="{{key.photoURL}}">
+                    </ion-avatar>
+                    <h4>{{key.displayName}}</h4>
+                    <ion-checkbox slot="end" (click)="presentAddFriend(key, key.uid)"></ion-checkbox>
+                </ion-item>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+</ion-list>
+  <!-- <ion-list no-lines>
+      <ion-item *ngFor="let key of testUsers | async;">
+        <ion-item >
+          <ion-avatar slot="start" item-left>
+            <img src="{{key.photoURL}}">
+          </ion-avatar>
+          <h2>{{key.displayName}}</h2>
+        </ion-item>
+
+        <ion-item slot="end">
+          <ion-checkbox (click)="presentAddFriend(key)"></ion-checkbox>
+        </ion-item>
+      </ion-item>
+  </ion-list> -->
+
+  <div text-center>
+    <ion-button color="primary" (click)="createGroup(this.name, this.type)">Create Group</ion-button>
+  </div>
+</ion-content>

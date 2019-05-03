@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-item class="menuButton" >
+        <ion-back-button></ion-back-button>
+        
+        </ion-item>
+        <ion-title class="newTitle">Split | Select Split Method</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+        <ion-label>Bill Detail/Name</ion-label>
+        <!-- <ion-input type="text" [(ngModel)]="description" placeholder="Enter a description"></ion-input>
+
+        <ion-label>Type</ion-label>
+        <ion-input type="text" [(ngModel)]="billtype" placeholder="Ex: Entertainment"></ion-input>
+        <ion-label>Amount</ion-label>
+        <ion-item>
+        <ion-label>$</ion-label>
+        <ion-input type="number" [(ngModel)]="amount" placeholder="5.43"></ion-input>
+        </ion-item> -->
+  
+   <!-- <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar> 
+   <ion-list no-lines>
+    <ion-list>
+     
+        <ion-item slot="end">
+          <ion-checkbox (click)="presentAddFriend(key.displayName, key.uid)"></ion-checkbox>
+        </ion-item>
+        
+      </ion-item>
+    </ion-list>
+  </ion-list> -->
+
+  <!-- <ion-label>Paid
+  </ion-label>
+    <ion-label>and</ion-label>-->
+    <ion-item> 
+        <ion-label>Split </ion-label>
+        <ion-select value="You" ok-text="Okay" cancel-text="Dismiss" [(ngModel)]="place" (ngModelChange)="onButtonClick(place)">
+          <ion-select-option [value]="item">equally</ion-select-option>
+          <ion-select-option [value]="unequal">unequally</ion-select-option>
+          <ion-select-option [value]="percentage" >by percentages</ion-select-option>
+          <ion-select-option [value]="shares">by shares</ion-select-option>
+          <ion-select-option [value]="adjustment">by adjustment</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item *ngFor="let key of members; let i = index">    
+        <ion-list>        
+            <h2>{{key}}</h2>
+            <ion-input disabled type="number" *ngIf="equalVisible" [(ngModel)]="membersAmount" placeholder="{{disIndOwe}}"></ion-input>
+            <ion-input type="number" *ngIf="percentVisible" [(ngModel)]="membersAmount[i]" (input) = "checkValidPercentage()" placeholder="0.00">%</ion-input>
+            <h2 *ngIf="unequalVisible">$</h2><ion-input type="number" *ngIf="unequalVisible" [(ngModel)]="membersAmount[i]" (input) = "checkValidUnequal()"  placeholder="0.00"></ion-input>
+            <ion-input type="number" *ngIf="sharesVisible" [(ngModel)]="membersAmount[i]" (input) = "checkValidShares()" placeholder="0.00"> share(s)</ion-input>
+           <h2 *ngIf="adjustmentVisible">+  $</h2><ion-input type="number" [(ngModel)]="membersAmount[i]" (input) = "checkValidAdjustment()" *ngIf="adjustmentVisible" placeholder="0.00"> </ion-input>
+          </ion-list>
+          </ion-item>
+
+          <ion-label color = "dark"  *ngIf="isRemaining">You have {{remaining}} remaining out of {{amount}}</ion-label>
+          <ion-label color = "dark"  *ngIf="perRemaining">You have {{remaining}} remaining out of 100%</ion-label>
+          <ion-label color = "danger"  *ngIf="errorunEqualVisible">Amount must be equal to ${{amount}}</ion-label>
+          <ion-label color = "danger"  *ngIf="errorPercVisible">Percentage must equal to 100%</ion-label>
+          <ion-label color = "danger"  *ngIf="errorSharesVisible">Inavlid # of shares, they must sum to equal to the # of members</ion-label>
+          <ion-label color = "danger"  *ngIf="errorAdjVisible">Inavlid adjustment, must be less than or equal to ${{amount}} </ion-label>
+
+  <ion-button color="primary" [disabled]="!isenabled" (click)="submitInfo()">Submit</ion-button>
+  <ion-button color="danger" (click)="pushPage()">Cancel</ion-button> 
+</ion-content>

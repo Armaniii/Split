@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar color="success">
+        <ion-back-button class="menuButton"></ion-back-button>
+        <ion-title class="group_title">Group | {{groupname}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+        
+        
+        <ion-label>Members</ion-label>
+        <ion-item *ngFor="let key of members">
+        <ion-avatar slot="start">
+            <img src="{{key.photoURL}}">
+        </ion-avatar>
+        <ion-label>{{key.displayName}}</ion-label>
+        </ion-item>
+  
+  <ion-button color="primary" type="Exit" (click)="pushPage()">Exit</ion-button>
+  
+  
+  </ion-content>

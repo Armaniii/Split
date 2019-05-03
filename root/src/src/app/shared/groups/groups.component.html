@@ -1,0 +1,51 @@
+
+<ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>
+
+<ion-list>
+  <ion-item class="divider"*ngFor="let key of testGroups | async" >
+      <ion-grid style="width: 100%; height: 100%;" (click)="goToInfo(key)">
+          <ion-row justify-content-center align-items-center style="height: 100%;" >
+              <ion-item >
+                  <ion-avatar slot="start">
+                      <img src="{{key.photoURL}}">
+                  </ion-avatar>
+                  <h4>{{key.displayName}}</h4>
+                 
+                 
+              </ion-item>
+          </ion-row>
+          
+      </ion-grid>
+      <ion-button slot="end" (click)="delete(key.id)" >
+        <ion-icon name="trash" ></ion-icon>
+      </ion-button>
+  </ion-item>
+</ion-list>
+
+<!-- 
+<ion-list>
+  
+    <ion-item class="group" *ngFor="let key of testGroups | async;" (click)="goToInfo(key)">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar slot="start" item-left>
+            <img src="{{key.photoURL}}">
+          </ion-avatar>
+          <h2>{{key.displayName}}</h2>
+        </ion-item>
+  
+        <ion-item-options slide="left">
+          <ion-button slot="end" color="danger" (click)="delete(key.id)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item>
+    (click)="goToInfo(key)
+</ion-list> -->
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentGroupForm()">
+  <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

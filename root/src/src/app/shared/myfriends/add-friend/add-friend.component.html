@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button class="leftButton" slot="start"color="primary" (click)="pushPage()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title text-center>Add Friend</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <ion-list>
+      <ion-item class="divider"*ngFor="let key of testUsers | async">
+          <ion-grid style="width: 100%; height: 100%;">
+              <ion-row justify-content-center align-items-center style="height: 100%;" >
+                  <ion-item >
+                      <ion-avatar slot="start">
+                          <img src="{{key.photoURL}}">
+                      </ion-avatar>
+                      <h4>{{key.displayName}}</h4>
+                      <ion-button color="primary" slot="end" (click)="presentAddFriend(key)">
+                        <ion-icon name="person-add"></ion-icon>
+                      </ion-button>
+                  </ion-item>
+              </ion-row>
+          </ion-grid>
+      </ion-item>
+    </ion-list>
+</ion-content> 

@@ -1,0 +1,116 @@
+<ion-header>
+    <ion-toolbar color="success">
+        <ion-back-button class="menuButton"></ion-back-button>
+        <ion-title *ngIf="split">Split | {{split.description}}</ion-title>
+        <ion-title *ngIf="!split">Split | Create Bill</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <div></div>
+
+      <form [formGroup]="splitForm" (ngSubmit)="createSplit()">
+  
+          <ion-label>Bill Name/Detail</ion-label>
+          <ion-input formControlName="description" type="text" placeholder="Bill Name"></ion-input>
+          <ion-label>Bill Type</ion-label>
+          <ion-input formControlName="billtype" type="text" placeholder="Ex: Entertainment"></ion-input>
+          
+          <ion-label>Amount</ion-label>
+        <ion-item>
+        <ion-label>$</ion-label>
+        <ion-input type="number" formControlName="amount" placeholder="5.43"></ion-input>
+        </ion-item>
+        <ion-list *ngIf="split" >
+          <ion-label>Added Users</ion-label>
+          <ion-item *ngFor="let check of members">
+            <ion-avatar slot="start">
+              <img src="{{check.photoURL}}">
+            </ion-avatar>
+            <ion-label>{{check.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-label *ngIf="!split">Add A Friend To The Bill</ion-label>
+        <p *ngIf="!split">Lists only 5 friends at first, must search for other friends</p>
+        <ion-searchbar *ngIf="!split" (input)="searchuser($event)" placeholder="Search for friend"></ion-searchbar> 
+        <ion-list no-lines *ngIf="!split">
+          <ion-list>
+            
+            <ion-item *ngFor="let key of testUsers | async;">
+              <ion-item >
+                <ion-avatar slot="start" item-left>
+                  <img src="{{key.photoURL}}">
+                </ion-avatar>
+                
+                <h2>{{key.displayName}}</h2>
+                
+              </ion-item>
+             
+              <ion-item slot="end" >
+                  <ion-item slot="end">
+                      <ion-checkbox (click)="presentAddFriend(key)"></ion-checkbox>
+                    </ion-item>
+                <!-- <ion-button (click)="presentAddFriend(key)">
+                  <ion-icon name="person-add"></ion-icon>
+                </ion-button> -->
+                  <!-- <ion-checkbox formControlName="order.{{i}}" (click)="presentAddFriend(key)" ></ion-checkbox> -->
+              <!-- <ion-input type="number" formControlName="{{this.num}}" placeholder="2.00"></ion-input> -->
+              </ion-item>
+              
+            </ion-item>
+          </ion-list>
+        </ion-list>
+          <!-- <ion-list>
+              <ion-radio-group formControlName="status">
+  
+                  <ion-item>
+                      <ion-label>Pending</ion-label>
+                      <ion-radio slot="start" value="pending" checked></ion-radio>
+                  </ion-item>
+  
+                  <ion-item>
+                      <ion-label>Complete</ion-label>
+                      <ion-radio slot="start" value="complete"></ion-radio>
+                  </ion-item>
+  
+              </ion-radio-group>
+          </ion-list> -->
+  
+          <ion-button [disabled]="splitForm.invalid" type="submit">{{ split ? 'Update!' : 'Create!' }}</ion-button>
+          
+      </form>
+      <ion-button (click)="pushPage()" type="cancel">Cancel</ion-button>
+  
+        <!-- <ion-label>Bill Detail/Name</ion-label>
+        <ion-input type="text" [(ngModel)]="description" placeholder="Enter a description"></ion-input>
+
+        <ion-label>Type</ion-label>
+        <ion-input type="text" [(ngModel)]="billtype" placeholder="Ex: Entertainment"></ion-input>
+        <ion-label>Amount</ion-label>
+        <ion-item>
+        <ion-label>$</ion-label>
+        <ion-input type="number" [(ngModel)]="amount" placeholder="5.43"></ion-input>
+        </ion-item>
+  
+   <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar> 
+   <ion-list no-lines>
+    <ion-list>
+      <ion-item *ngFor="let key of filteredusers">
+        <ion-item >
+          <ion-avatar slot="start" item-left>
+            <img src="{{key.photoURL}}">
+          </ion-avatar>
+          <h2>{{key.displayName}}</h2>
+        </ion-item>
+        <ion-item slot="end">
+          <ion-checkbox (click)="presentAddFriend(key.displayName, key.uid)"></ion-checkbox>
+        </ion-item>
+        
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <ion-button color="primary" (click)="createBill(this.description, this.billtype, this.amount)">Submit</ion-button>
+  <ion-button color="danger" (click)="pushPage()">Cancel</ion-button>  -->
+
+  
+  </ion-content>

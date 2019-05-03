@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">938783939410-07e721sgsh2ssnrg5danqde7k96keofe.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://splitwise-218523.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">938783939410</string>
+    <string name="google_api_key" translatable="false">AIzaSyC6ZDkXq1Vg685_Avq9cUlEUJ2NMWNq0mk</string>
+    <string name="google_app_id" translatable="false">1:938783939410:android:d8bb7e539ffd5ff7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC6ZDkXq1Vg685_Avq9cUlEUJ2NMWNq0mk</string>
+    <string name="google_storage_bucket" translatable="false">splitwise-218523.appspot.com</string>
+    <string name="project_id" translatable="false">splitwise-218523</string>
+</resources>

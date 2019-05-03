@@ -1,0 +1,85 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-android-firebase-gradle-release": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-android-play-services-gradle-release": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-crop": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "ionfire.page.link",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.938783939410-ni9l6cglbrc8stus86b59n1f4iflreh3",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-native-spinner": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-spinner": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-telerik-imagepicker": {
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": "In order to upload profile picture, and use it to add pictures to groups",
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.SplitSplat.Split"
+    }
+  }
+}

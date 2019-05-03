@@ -1,0 +1,4 @@
+#Tue Dec 04 02:00:08 PST 2018
+base.0=/Users/sauldesigns/Documents/split/fin/root/src/platforms/android/app/build/intermediates/transforms/dexMerger/debug/24
+path.0=classes.dex
+renamed.0=classes.dex

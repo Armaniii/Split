@@ -1,0 +1,28 @@
+<ion-list>
+    <ion-item class="divider"*ngFor="let key of testgroup | async">
+        <ion-grid style="height: 100%; width: 100%">
+            <ion-row justify-content-center align-items-center style="height: 100%;">
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="{{key.createdbyphoto}}">
+                    </ion-avatar>
+                    <h4>{{key.createdbyname}} charged for {{key.description}}</h4>
+                    <div class="negMoney" slot="end">
+                        -${{key.amount}}
+                    </div>
+                </ion-item>
+                <ion-list *ngFor="let mem of key.members">
+                    <ion-item>
+                        <ion-avatar slot="start">
+                            <img src="{{mem.photoURL}}">
+                        </ion-avatar>
+                        <h5>{{mem.name}} owes </h5>
+                        <div class="negMoney" slot="end">-${{decTrans(mem.owes)}}</div>
+                    </ion-item>
+                </ion-list>
+
+            </ion-row>
+        </ion-grid>
+        <!-- <ion-button >Edit</ion-button> -->
+    </ion-item>
+</ion-list>

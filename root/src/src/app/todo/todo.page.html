@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <!-- <div padding class="split-img">
+            <img src="/src/assets/icon/split_HEADER_WHITE.png">
+        </div> -->
+        <ion-title text-center>To-do's</ion-title>
+    
+        <ion-buttons slot="end">
+            <ion-menu-button class="menuButton" autoHide></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-segment color ="secondary" (ionChange)="updateFilter($event.detail.value)">
+        <ion-segment-button value="" checked>
+            All
+        </ion-segment-button>
+        <ion-segment-button value="pending">
+            Pending
+        </ion-segment-button>
+        <ion-segment-button value="complete">
+            Complete
+        </ion-segment-button>
+    </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let todo of filtered | async; trackBy: trackById">
+            <ion-label>
+                <span [class.complete]="todo.status === 'complete'">{{ todo.content }}</span>
+            </ion-label>
+
+            <ion-checkbox (click)="toggleStatus(todo)" [checked]="todo.status === 'complete'" color="success"></ion-checkbox>
+
+
+            <ion-button [href]="'todo/' + todo.id">
+                <ion-icon name="eye"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="presentTodoForm(todo)" color="tertiary">
+                <ion-icon name="create"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="deleteTodo(todo)" color="danger">
+                <ion-icon name="trash"></ion-icon>
+            </ion-button>
+        </ion-item>
+
+
+
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentTodoForm()">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+
+
+</ion-content>

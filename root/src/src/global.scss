@@ -1,0 +1,89 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+body {
+    font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+ion-title {
+    font-family: var(--heading-font);
+}
+
+ion-title{
+    font-size: 125;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+ion-segment-button {
+    background-color: #10c19c;
+}
+ion-toast { z-index: 30000; }
+ion-item,
+ion-card,
+ion-list {
+    width: 100% !important;
+    max-width:100% !important;
+}
+
+.split-img {
+    text-align: center;
+}
+
+.menuButton {
+    position: fixed;
+    right: 0%;
+}
+
+#circle-img {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#userAvatar {
+    border: 1px solid #ffffff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 20px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftButton {
+    position: fixed;
+    left: 0.5%;
+}
+
+// .clearButton {
+//     box-shadow: none !important;
+//     border-color: rgba(0,0,0,0) !important;
+//     outline: none !important;
+// }
+
+h2 {
+    text-align: center;
+}
+
+.negMoney {
+    color: red;
+}

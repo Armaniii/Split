@@ -1,0 +1,10 @@
+
+<ion-list *ngIf="docData$ | async as groupProfile">
+  <ion-item   *ngFor="let key of groupProfile.members " padding>
+             <ion-avatar item-start slot="start">
+                 <img src="{{key.photoURL}}">
+             </ion-avatar>
+             <h4>{{key.name}}</h4>
+            <p slot="end">${{decTrans(key.owes)}}</p>
+      </ion-item>
+      </ion-list>

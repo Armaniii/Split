@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-back-button class="menuButton"></ion-back-button>
+      <ion-title>Bill | {{this.value.description}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+      <ion-label>Total Amount Due</ion-label>
+      <ion-item>
+        <h2>$ {{this.value.amount}}</h2>
+      </ion-item>
+      
+      <!-- <ion-label>You Owe</ion-label>
+      <ion-item>
+          <h2>$ {{this.keyowes}}</h2>
+        </ion-item> -->
+      
+      <ion-label>Members Owe</ion-label>
+      <ion-item *ngFor="let key of value.members">
+      <ion-avatar slot="start">
+        <img src="{{key.photoURL}}">
+      </ion-avatar>
+      <ion-label>{{key.name}}</ion-label>
+      <h2 slot="end">${{decTrans(key.owes)}}</h2>
+      </ion-item>
+
+<ion-button color="primary" type="Exit" (click)="pushPage()">Exit</ion-button>
+
+
+</ion-content>

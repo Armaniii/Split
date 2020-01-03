@@ -1,7 +1,8 @@
 # Split
 
 Split is a cross-platform application that allows its users to create and keep track of bills and accurately split them between members 5 different ways. 
-![](https://www.dropbox.com/s/ahfy5yj6jbs3opu/Split_Login.PNG?dl=1)![](https://www.dropbox.com/s/v77zzzksi4y4ukz/Split_Bill.PNG?dl=1)
+
+
 # Features
   - User Authentication + Google Authentication, Forgot Password
   - Friend Requests, Group creation + description and type specification for groups
@@ -16,7 +17,14 @@ Split is a cross-platform application that allows its users to create and keep t
 
 
 
-
+  <img src="/root/login.jpg" width="250"><img src="/root/side_bar.jpg" width="250">
+  <img src="/root/bill_view.jpg" width="250">
+  <img src="/root/friends.jpg" width="250">
+  <img src="/root/group_view.jpg" width="250">
+  <img src="/root/split_methods.jpg" width="250">
+  <img src="/root/splitting.jpg" width="250">
+  <img src="/root/todo.jpg" width="250">
+  <img src="/root/curr_conv.jpg" width="250">
 ### Lanaugages and Frameworks Used
 
 
@@ -26,8 +34,6 @@ Split is a cross-platform application that allows its users to create and keep t
 
 
 ### How to Run
-
-Dillinger requires the latest version [Node.js](https://nodejs.org/) to run.
 
 Install Ionic and Angular Framework
 
